@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/608e9d3ec2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/images/logo.jpg" />
+    <title>Music PLayer</title>
+  </head>
+
+  <body>
+    <div class="body1">
+      <div class="navbar">
+        <div class="icon">
+          <div class="logo">
+            <h2>Music Player</h2>
+          </div>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#category">CATEGORIES</a></li>
+          </ul>
+        </div>
+        <div class="searchbar">
+          <input
+            class="search"
+            type="search"
+            name=""
+            placeholder="Type To text"
+            oninput="Search(this.value);"
+          />
+          <a href="#"> <button class="btn">Search</button></a>
+          <div class="options"></div>
+        </div>
+      </div>
+      <div class="upper-image">
+        <img src="images/home.jpg" />
+        <h1>Welcome To The Music Player</h1>
+      </div>
+      <div class="flex" id="category">
+        <div class="div1" onclick="ArabicSongs();">
+          <img src="images/arabic.jpg" />
+          <h3>Arabic Songs</h3>
+        </div>
+        <div class="div2" onclick="EnglishSongs();">
+          <img src="images/english.jpg" />
+          <h3>English Songs</h3>
+        </div>
+        <div class="div3" onclick="franceSongs();">
+          <img src="images/france.jpg" />
+          <h3>Francian Songs</h3>
+        </div>
+        <div class="div4" onclick="KoreanSongs();">
+          <img src="images/korean.jpg" />
+          <h3>Korean Songs</h3>
+        </div>
+        <div class="div5" onclick="indianSongs();">
+          <img src="images/indian.jpg" />
+          <h3>indian Songs</h3>
+        </div>
+        <div class="div6" onclick="favSongs();">
+          <img src="images/favorite.jpg" />
+          <h3>Favorite Songs</h3>
+        </div>
+      </div>
+    </div>
+    <div class="body2">
+      <div class="empty">
+        <p>No Elemet in Your Favorite List</p>
+        <button onclick="gotoHome();">Back To The Home Page</button>
+      </div>
+      <div class="player">
+        <div class="box">
+          <div class="info">
+            <div class="home">
+              <i
+                onclick="gotoHome()"
+                class="fa-solid fa-house fa-1x"
+                id="homeIcon"
+              ></i>
+              <i
+                id="MusicList-btn"
+                class="fa-solid fa-list-ul fa-1x"
+                id="listIcon"
+              ></i>
+            </div>
+            <div id="art"></div>
+            <span id="now-playing">Playing X of Y</span>
+            <div id="Name">Song NAME</div>
+            <div id="arttist">Song Artist</div>
+            <div class="buttons">
+              <div id="prev-btn" onclick="prevSong()">
+                <i class="fa fa-step-backward fa-2x"></i>
+              </div>
+              <div id="playerpause-btn" onclick="playpauseSong()">
+                <i class="fa-solid fa-circle-play fa-5x"></i>
+              </div>
+              <div id="next-btn" onclick="nextSong()">
+                <i class="fa fa-step-forward fa-2x"></i>
+              </div>
+            </div>
+            <div class="slider">
+              <div class="current-time">00:00</div>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="0"
+                id="seek_slider"
+                oninput="onSeek()"
+              />
+              <div class="total-time">00:00</div>
+            </div>
+            <div class="slider-vol">
+              <i class="fa fa-volume-down"></i>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="99"
+                id="volume_slider"
+                oninput="onVolume()"
+              />
+              <i class="fa fa-volume-up"></i>
+            </div>
+            <div class="buttons2">
+              <div id="volume-btn" onclick="setVolume()">
+                <i class="fa-solid fa-volume-high fa-1x"></i>
+              </div>
+              <div id="random-btn" onclick="randomSong()">
+                <i class="fas fa-random fa-1x"></i>
+              </div>
+              <div id="fav-btn" onclick="addfavSong()">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <div id="repeat-btn" onclick="repeatSong()">
+                <i class="fa fa-repeat fa-1x"></i>
+              </div>
+            </div>
+            <div class="musicList">
+              <div class="header">
+                <div class="row">
+                  <i class="fa-solid fa-sliders"></i>
+                  <span>Music List</span>
+                </div>
+                <i id="close" class="fa-solid fa-xmark"></i>
+              </div>
+              <ul id="ulSong"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
